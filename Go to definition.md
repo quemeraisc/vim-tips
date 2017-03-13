@@ -3,6 +3,7 @@
 see [cursor tips](http://vim.wikia.com/wiki/Go_to_definition_using_g)
 
 * gd
+
 >go to the local declaration.
 * gD 
 >go to the global declaration.
