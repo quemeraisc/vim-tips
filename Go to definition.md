@@ -23,3 +23,6 @@ see [cursor tips](http://vim.wikia.com/wiki/Go_to_definition_using_g)
     
 * g] 
 >jump to a tag definition 
+
+## The power of g is to be explored
+see [power of g](http://vim.wikia.com/wiki/VimTip227)
