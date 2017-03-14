@@ -1,4 +1,4 @@
-""" Running a command from within vim
+### Running a command from within vim
 ```
 :! my_cmd
 ```
