@@ -1,5 +1,6 @@
-### Basic moves:
+# Most useful basic moves
 
+### Basic moves in the current line :
 
 * `w` goes to the begining of the next word
 * `b` goes to the begining of the previous word
@@ -9,6 +10,15 @@
 * `Fx` previous 'x'
 * `tx` goes just before 'x'
 * `Tx` goes backward after 'x'
+
+### Basic moves to change line :
+* `j` to next line
+* `k `to previous line
+* `5j` forward 5 lines
+* `10k` backward 10 lines
+* `nG` moves to line n
+
+see [All_the_right_moves](http://vim.wikia.com/wiki/All_the_right_moves)
 
 ### Make changes:
 Combining moves with change commands:
@@ -25,9 +35,10 @@ Combining moves with change commands:
 
 * `yip` yanks a whole paragraph, could be a function 
 
-see [All_the_right_moves](http://vim.wikia.com/wiki/All_the_right_moves)
 
-* `nG` moves to line n
+
+
+
 
 ### Change the focus with z :
 * `z.` makes it centre,
