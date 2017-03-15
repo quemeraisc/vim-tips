@@ -19,6 +19,15 @@ ct; changes everything until next ';' works with any character.
 cTc changes everything from after previous 'c' to current position
 cfe changes everything from current to next 'e' included
 cFe same, backward, 'e' included
+
+cis replaces a whole paragraph from within
 ```
+
+### Yank whatever 
+```
+
+yip yanks a whole paragraph, could be a function
+
+``` 
 
 
