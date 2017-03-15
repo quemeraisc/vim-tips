@@ -1,11 +1,8 @@
 ### A few useful things to have in .vimrc file :
 
-Get vi to guess the type of file 
+Correct tabulation is important, and syntax 
 ```
-filetype plugin indent on
-```
-Correct tabulation is important
-```
+ filetype plugin indent on
  set shiftwidth=4
  set softtabstop=4
  sest expandtab
@@ -17,3 +14,7 @@ Correct tabulation is important
  set ruler
  ```
  
+ Leader key is useful, by default it is set to \ which is hardly convenient, try space instead (\ is still available):
+ ```
+ map <SPACE> <leader>
+ ```
