@@ -28,7 +28,8 @@ Combining moves with change commands:
 
 ---
 # spliting and buffering
-In order to set up a convenient environment, let's use split, for example:
+In order to set up a convenient environment, let's use split:
+* `:sp <filename>` splits horizontally, `:vs <filename>` splits vertically
 
 ---
 # Focusing
