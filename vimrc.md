@@ -18,3 +18,8 @@ Correct tabulation is important, and syntax
  ```
  map <SPACE> <leader>
  ```
+
+### .vim/ directory
+In .vim directory can be found all sorts of extras like colorscheme, syntax files or even plugins
+Colorscheme are to be found in `$HOME/.vim/colors/`
+I like to use material.vim (http://equinusocio.github.io/material-theme/) as a generic colorscheme, and I just found pychimp.vim (Pratheek <pratheek.i@gmail.com>) for a minimal python colorscheme to which I appended support for python Todo.
