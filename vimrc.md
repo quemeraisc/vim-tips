@@ -19,6 +19,15 @@ Correct tabulation is important, and syntax
  map <SPACE> <leader>
  ```
 
+Here is a neat way to allow moving around splits:
+```
+nnoremap <C-J> <C-W><C-J>
+nnoremap <C-K> <C-W><C-K>
+nnoremap <C-L> <C-W><C-L>
+nnoremap <C-H> <C-W><C-H>
+```
+
+
 ### .vim/ directory
 In .vim directory can be found all sorts of extras like colorscheme, syntax files or even plugins
 Colorscheme are to be found in `$HOME/.vim/colors/`.
