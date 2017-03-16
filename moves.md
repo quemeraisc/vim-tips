@@ -1,4 +1,4 @@
-# Most useful basic moves
+# Useful basic moves
 
 ### Basic moves in the current line :
 
@@ -35,11 +35,11 @@ Combining moves with change commands:
 
 * `yip` yanks a whole paragraph, could be a function 
 
+# spliting and buffering
+In order to set up a convenient environment, let's use split, for example:
 
 
-
-
-
+# Focusing
 ### Change the focus with z :
 * `z.` makes it centre,
 * `zt` is for top, zb for bottom
