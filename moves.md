@@ -2,9 +2,7 @@
 
 ### Basic moves in the current line :
 
-* `w` goes to the begining of the next word
-* `b` goes to the begining of the previous word
-* `3b` goes backward 3 words, begining of that word
+* `w` goes to the begining of the next word, `b` goes to the begining of the previous word ; `3b` goes backward 3 words, begining of that word
 
 * `fx` goes to next 'x' on the current line
 * `Fx` previous 'x'
