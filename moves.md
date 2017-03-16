@@ -4,16 +4,11 @@
 
 * `w` goes to the begining of the next word, `b` goes to the begining of the previous word ; `3b` goes backward 3 words, begining of that word
 
-* `fx` goes to next 'x' on the current line
-* `Fx` previous 'x'
-* `tx` goes just before 'x'
-* `Tx` goes backward after 'x'
+* `fx` goes to next 'x' on the current line, `Fx` previous 'x'
+* `tx` goes just before 'x', `Tx` goes backward after 'x'
 
 ### Basic moves to change line :
-* `j` to next line
-* `k `to previous line
-* `5j` forward 5 lines
-* `10k` backward 10 lines
+* `j` to next line, `k `to previous line ; `5j` forward 5 lines, `10k` backward 10 lines
 * `nG` moves to line n
 
 see [All_the_right_moves](http://vim.wikia.com/wiki/All_the_right_moves)
