@@ -37,7 +37,11 @@ nnoremap <C-K> <C-W><C-K>
 nnoremap <C-L> <C-W><C-L>
 nnoremap <C-H> <C-W><C-H>
 ```
-
+Moving around buffers:
+```
+:ls lists the current buffers
+:b <name or number> goes to that buffer
+```
 ---
 # Focusing
 ### Change the focus with z :
