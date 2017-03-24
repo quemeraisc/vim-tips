@@ -27,6 +27,11 @@ nnoremap <C-L> <C-W><C-L>
 nnoremap <C-H> <C-W><C-H>
 ```
 
+Quickly edit, source vimrc from anywhere
+```
+nnoremap <leader>ev :vsplit $MYVIMRC<cr>
+nnoremap <leader>sv :source $MYVIMRC<cr>
+```
 
 ### .vim/ directory
 In .vim directory can be found all sorts of extras like colorscheme, syntax files or even plugins
