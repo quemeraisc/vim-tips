@@ -5,7 +5,7 @@ Correct tabulation is important, and syntax
  filetype plugin indent on
  set shiftwidth=4
  set softtabstop=4
- sest expandtab
+ set expandtab
  ``` 
  
  Know where you are in the file, using line numbering, and ruler
