@@ -9,7 +9,7 @@ see [cursor tips](http://vim.wikia.com/wiki/Go_to_definition_using_g)
 * `gg` goes to the first line in the buffer (or provide a count before the command for a specific line).
 * `G` goes to the last line (or provide a count before the command for a specific line). 
 
-* `gf` will go to the file under the cursor
+* `gf` will go to the file under the cursor, in place, `<ctrl-w>gf` does the same but in a new tab, `<ctrl-w>f` in a new window or buffer
     
 * `g]` jump to a tag definition 
 ___
