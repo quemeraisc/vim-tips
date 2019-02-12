@@ -126,7 +126,7 @@ augroup END
 augroup filetype_html_css_js
     autocmd!
     autocmd FileType html,css,js    
-         \ set tabstop=2
+        \ set tabstop=2
         \ set softtabstop=2
         \ set shiftwidth=2
 augroup END
