@@ -119,6 +119,7 @@ augroup END
 " c {{{2
 augroup filetype_c
     autocmd!
+    "% is the current filename %:t:r is the current filename without extension
     autocmd filetype c nnoremap <leader>gc :!gcc % -o %:t:r
 augroup END
 "}}}2
