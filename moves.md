@@ -3,6 +3,7 @@
 ### Basic moves in the current line :
 
 * `w` goes to the begining of the next word, `b` goes to the begining of the previous word ; `3b` goes backward 3 words, begining of that word
+* `e` goes to the end of the current word, or to the end of the next word if already at the end of a word.
 
 * `fx` goes to next 'x' on the current line, `Fx` previous 'x'
 * `tx` goes just before 'x', `Tx` goes backward after 'x'
