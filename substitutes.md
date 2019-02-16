@@ -1,9 +1,9 @@
-Make one substitution :
+*Making some subsitutions
 
-:s/src/dst/
+*** Make one substitution :
+
+`:s/src/dst/ `
 
 Same subsitution for next occurence:
 
-n
-then
-&
+`n` then `&`
