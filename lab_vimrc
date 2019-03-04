@@ -1,0 +1,262 @@
+"Vim specifics {{{1
+augroup Vim
+    autocmd!
+    autocmd FileType vim setlocal foldmethod=marker
+    autocmd FileType vim setlocal foldcolumn=4
+    autocmd FileType vim setlocal foldlevel=0
+    autocmd FileType vim noremap <SPACE> zA
+augroup END
+"}}}1
+"Plug + configs {{{1
+call plug#begin('~/.vim/plugged')
+    Plug 'scrooloose/nerdtree', { 'on':  'NERDTreeToggle' }
+    Plug 'kien/ctrlp.vim'
+    Plug 'tpope/vim-surround'
+    Plug 'fredrik-jansson-se/vim-yang'
+    Plug 'vim-syntastic/syntastic'
+    Plug 'Valloric/YouCompleteMe'
+    Plug 'SirVer/ultisnips'
+    Plug 'honza/vim-snippets'
+    Plug 'tpope/vim-fugitive'
+    Plug 'jiangmiao/auto-pairs'
+    Plug 'alvan/vim-closetag'
+    Plug 'rafi/awesome-vim-colorschemes'
+    Plug 'itchyny/lightline.vim'
+    "Plug 'elzr/vim-json'
+    Plug 'taohex/lightline-buffer'
+call plug#end()
+"snippets config{{{2
+    let g:UltiSnipsEditSplit="horizontal"
+    let g:UltiSnipsSnippetsDir="~/.vim/my_snippets"
+    let g:UltiSnipsExpandTrigger="<tab>"
+    let g:UltiSnipsSnippetDirectories=["my_snippets"]
+    let g:UltiSnipsListSnippets="<c-SPACE>"
+    let g:UltiSnipsJumpForwardTrigger="<c-j>"
+    let g:UltiSnipsJumpBackwardTrigger="<c-k>"
+"}}}2
+"Nerdtree config{{{2
+    autocmd StdinReadPre * let s:std_in=1
+    "autocmd VimEnter * if argc() == 0 && !exists("s:std_in") | NERDTree | endif
+    autocmd VimEnter * if argc() == 1 && isdirectory(argv()[0]) && !exists("s:std_in") | exe 'NERDTree' argv()[0] | wincmd p | ene | exe 'NERDTreeFocus' | endif
+    autocmd bufenter * if (winnr("$") == 1 && exists("b:NERDTree") && b:NERDTree.isTabTree()) | q | endif
+    map <C-n> :NERDTreeToggle<CR>
+    let g:NERDTreeDirArrowExpandable = '→'
+    let g:NERDTreeDirArrowCollapsible = '↓'
+    let NERDTreeIgnore=['\.pyc$', '\.zip$', '.gz$', '\~$']
+"}}}2
+" CtrlP Config {{{2
+    let g:ctrlp_match_window = 'top,order:btt,min:1, max:20,result:20'
+    let g:ctrlp_show_hidden = 1
+" }}}2
+"Status Line {{{2
+" set the runtime path to include plugins
+" lightline provides a nice status bar
+"call colors#Lightline()
+"set rtp+=~/.vim/awesome-vim-colorschemes-master
+"set rtp+=~/.vim/lightline-buffer-master
+set laststatus=2 "makes sure the lightline gets rendered
+set showtabline=2 "Always show tabline, nice
+set hidden "allow buffer switching without saving, can be dangerous!
+set noshowmode
+" use lightline-buffer in lightline
+let g:lightline = {
+    \ 'colorscheme' : 'darcula',
+    \ 'tabline': {
+    \   'left': [ [ 'bufferinfo' ],
+    \             [ 'separator' ],
+    \             [ 'bufferbefore', 'buffercurrent', 'bufferafter' ], ],
+    \   'right': [ [ 'close' ], ],
+    \ },
+    \ 'active' : {
+    \   'left' : [  ['mode' , 'paste' ],
+    \               ['gitbranch', 'readonly', 'filename', 'modified']]
+    \ },
+    \ 'component_expand': {
+    \   'buffercurrent': 'lightline#buffer#buffercurrent',
+    \   'bufferbefore': 'lightline#buffer#bufferbefore',
+    \   'bufferafter': 'lightline#buffer#bufferafter',
+    \ },
+    \ 'component_type': {
+    \   'buffercurrent': 'tabsel',
+    \   'bufferbefore': 'raw',
+    \   'bufferafter': 'raw',
+    \ },
+    \ 'component_function': {
+    \   'bufferinfo': 'lightline#buffer#bufferinfo',
+    \   'gitbranch' : 'fugitive#head'
+    \ },
+    \ 'component': {
+    \   'separator': '',
+    \ },
+    \ }
+" remap arrow keys
+nnoremap <Left> :bprev<CR>
+nnoremap <Right> :bnext<CR>
+
+" lightline-buffer ui settings
+" replace these symbols with ascii characters if your environment does not support unicode
+let g:lightline_buffer_logo = '√ '
+let g:lightline_buffer_readonly_icon = '©'
+let g:lightline_buffer_modified_icon = 'δ'
+let g:lightline_buffer_git_icon = ' '
+let g:lightline_buffer_ellipsis_icon = '..'
+let g:lightline_buffer_expand_left_icon = '←'
+let g:lightline_buffer_expand_right_icon = '→'
+let g:lightline_buffer_active_buffer_left_icon = '∋ '
+let g:lightline_buffer_active_buffer_right_icon = ''
+let g:lightline_buffer_separator_icon = '¦'
+
+" lightline-buffer function settings
+let g:lightline_buffer_show_bufnr = 1
+let g:lightline_buffer_rotate = 0
+let g:lightline_buffer_fname_mod = ':t'
+let g:lightline_buffer_excludes = ['vimfiler']
+
+let g:lightline_buffer_maxflen = 30
+let g:lightline_buffer_maxfextlen = 3
+let g:lightline_buffer_minflen = 16
+let g:lightline_buffer_minfextlen = 3
+let g:lightline_buffer_reservelen = 20
+"}}}2
+"}}}1
+"Some settings {{{1
+syntax on
+colorscheme dracula
+filetype plugin indent on
+set encoding=utf-8
+set background=dark
+set t_Co=256
+set number
+set relativenumber
+set cursorline
+set noswapfile
+set showcmd
+set hlsearch "Highlight result of last search
+set incsearch "Highlight pattern search as getting typed
+set path+=**
+set wildmenu
+set shiftwidth=4
+set softtabstop=4
+set expandtab
+set splitbelow
+set splitright
+"Completion menu {{{2
+    highlight Pmenu ctermfg=Black ctermbg=Cyan gui=bold
+    highlight PmenuSel ctermfg=Cyan ctermbg=Black gui=bold
+    highlight PmenuSbar ctermbg=Red
+"}}}2
+"}}}1
+"Leader cmds {{{1
+"Leader key now becomes , default was \
+map , <leader>
+"NORMAL mode {{{2
+"Highlight last inserted text
+nnoremap gV `[v`]
+"quickly edit vimrc and source it {{{3
+    nnoremap <leader>ev :vsplit $MYVIMRC<cr>
+    nnoremap <leader>sv :source $MYVIMRC<cr>
+    nnoremap <leader>sy :source %<cr>
+    nnoremap <leader>oh :split $HOME/<cr>
+    nnoremap <leader>eb :vsplit $HOME/.bashrc<cr>
+    nnoremap <leader>mc :!make clean
+    nnoremap <leader>ma :!make all
+    nnoremap <leader>make :!make clean all
+"}}}3
+"move between splits {{{3
+    nnoremap <C-J> <C-W><C-J>
+    nnoremap <C-K> <C-W><C-K>
+    nnoremap <C-L> <C-W><C-L>
+    nnoremap <C-H> <C-W><C-H>
+"}}}3
+"}}}2
+"INSERT mode{{{2
+"jj is now escape. If needed type j wait type k {{{3
+    inoremap jj <ESC>
+"}}}3
+"completion shortcuts {{{3
+    inoremap <Nul> <C-X><C-N>
+"}}}3
+"}}}2
+"}}}1
+"Set to relative number whenever leaving the insert mode{{{1
+autocmd InsertEnter * :set number
+autocmd InsertLeave * :set relativenumber
+"}}}1
+" Delete trailing white space on save, useful for some filetypes ;) {{{1
+fun! CleanExtraSpaces()
+    let save_cursor = getpos(".")
+    let old_query = getreg('/')
+    silent! %s/\s\+$//e
+    call setpos('.', save_cursor)
+    call setreg('/', old_query)
+endfun
+if has("autocmd")
+    autocmd BufWritePre *.txt,*.js,*.py,*.wiki,*.sh,*.coffee :call CleanExtraSpaces()
+endif
+" }}}1
+"Language specifics {{{1
+"Python {{{2
+augroup PythonFile
+    autocmd!
+    "autocmd FileType python colorscheme apprentice
+    autocmd FileType python setlocal foldmethod=indent
+    autocmd FileType python setlocal expandtab shiftwidth=4 softtabstop=4
+    "autocmd FileType python set omnifunc=pythoncomplete#Complete
+    autocmd FileType python set colorcolumn=80
+    autocmd FileType python highlight ColorColumn ctermbg=8
+    autocmd FileType python set textwidth=79
+    autocmd FileType python nnoremap <buffer> <localleader>py :!python %
+    autocmd FileType python nnoremap <buffer> <localleader>c I#<esc>
+    autocmd FileType python nnoremap <buffer> <localleader>cc I"""<esc>A<cr>"""<esc>
+augroup END
+"}}}2
+"Text {{{2
+augroup TextFile
+    autocmd!
+augroup END
+"}}}2
+"C {{{2
+augroup CFile
+    autocmd!
+    autocmd FileType c setlocal foldmethod=indent
+    autocmd FileType c setlocal foldlevel=0 
+    autocmd FileType c nnoremap <leader>c I/*<esc>A */<esc>
+    autocmd FileType c nnoremap <leader>cc I/*<cr><esc>A<cr>*/<esc>
+    autocmd FileType c nnoremap <leader>uc :s/\/\*//<cr>:s/\*\//<esc>
+augroup END
+"}}}2
+"yang json {{{2
+augroup yang
+    autocmd!
+    autocmd FileType yang setlocal foldmethod=syntax
+    autocmd FileType yang setlocal foldlevel=2
+    autocmd BufWritePost *.yang !make clean all
+augroup END
+"}}}2
+"javascript json {{{2
+augroup Javascript
+    autocmd!
+    autocmd FileType BufNewFile,BufRead *.json set ft=javascript
+    autocmd FileType javascript,json setlocal foldmethod=syntax
+    autocmd FileType javascript,json setlocal foldlevel=2
+augroup END
+"}}}2
+"Perl {{{2
+augroup PerlFile
+    autocmd!
+    autocmd FileType perl setlocal expandtab shiftwidth=4 softtabstop=4
+    autocmd FileType perl nnoremap <buffer> <leader>c I#<esc>
+    autocmd FileType perl nnoremap <buffer> <leader>cc I=pod<cr><cr><esc>A<cr>=cut<esc>
+    autocmd FileType perl iabbr if if (condition){<cr>}<esc>3b
+    autocmd FileType perl iabbr foreach foreach (@elem){<cr>}<esc>3b
+    autocmd FileType perl iabbr sub sub name {<cr>my @param = @_;<cr>}<esc>3b
+    autocmd FileType perl iabbr xml =for xml<cr>
+    autocmd FileType perl iabbr req <request><cr><from><cr></from><cr><purpose><cr></purpose><cr></request>
+    autocmd FileType perl iabbr aut <author><cr></author><cr>
+    autocmd FileType perl iabbr dat <date><cr></date><cr>
+augroup END
+"}}}2
+"YAML {{{2
+autocmd FileType yaml setlocal expandtab shiftwidth=2 softtabstop=2
+"}}}2
+"}}}1
