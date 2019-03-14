@@ -24,6 +24,7 @@ call plug#begin('~/.vim/plugged')
     Plug 'itchyny/lightline.vim'
     "Plug 'elzr/vim-json'
     Plug 'taohex/lightline-buffer'
+    Plug 'airblade/vimgutter'
 call plug#end()
 "snippets config{{{2
     let g:UltiSnipsEditSplit="horizontal"
