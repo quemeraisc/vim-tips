@@ -33,10 +33,10 @@ In order to set up a convenient environment, let's use split:
 * `:sp <filename>` splits horizontally, `:vs <filename>` splits vertically ; filename can be found using tabs
 We'll need a way to move around our split layout:
 ```
-nnoremap <C-J> <C-W><C-J>
-nnoremap <C-K> <C-W><C-K>
-nnoremap <C-L> <C-W><C-L>
-nnoremap <C-H> <C-W><C-H>
+<C-W><C-J>
+<C-W><C-K>
+<C-W><C-L>
+<C-W><C-H>
 ```
 Moving around buffers:
 ```
