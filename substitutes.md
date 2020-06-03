@@ -16,6 +16,7 @@ Likeso : `:%s/src/dst/gc`
 ### Now let's substitute 'else' with the previous pattern, here 'dst'
 Let's search for our new pattern 'else'
 `/else`
-#####now, let's replace all occurences in the file with our previous substitute:
+
+##### now, let's replace all occurences in the file with our previous substitute:
 `g&` : It's a kind of magic ;)
 
